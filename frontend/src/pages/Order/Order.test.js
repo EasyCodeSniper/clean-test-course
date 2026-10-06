@@ -35,9 +35,9 @@ describe('Test Order', () => {
         <Order />
       </OrderContext.Provider>
     );
-    //Assert: replace the return true.
+    ///Assert: replace the return true.
     await waitFor(() => {
-      expect(screen.getAllbyText('$2.50')).toHaveLength(1)
+      expect(screen.getAllByText('$2.50')).toHaveLength(1)
     });
   });
 
@@ -63,7 +63,7 @@ describe('Test Order', () => {
     );
     //Assert: replace the return true.
     await waitFor(() => {
-      expect(screen.getAllbyText('$5.00')).toHaveLength(1)
+      expect(screen.getAllByText('$5.00')).toHaveLength(1)
     });
   });
 });
