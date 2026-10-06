@@ -37,7 +37,7 @@ describe('Test Order', () => {
     );
     //Assert: replace the return true.
     await waitFor(() => {
-      return true;
+      expect(screen.getAllbyText('$2.50')).toHaveLength(1)
     });
   });
 
@@ -63,7 +63,7 @@ describe('Test Order', () => {
     );
     //Assert: replace the return true.
     await waitFor(() => {
-      return true;
+      expect(screen.getAllbyText('$5.00')).toHaveLength(1)
     });
   });
 });
