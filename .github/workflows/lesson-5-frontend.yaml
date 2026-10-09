@@ -3,7 +3,7 @@ name: Lesson 5 DAST
 on:
   push:
     branches:
-      - lesson-5-complete
+      - lesson-5
 jobs:
   function_test:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
     needs: [deploy]
     runs-on: ubuntu-latest
     steps:
-      - name: Dynamic Application Security Scans
+      - name: Dynamic Application Security Scan
         uses: zaproxy/action-baseline@v0.15.0
         with:
           target: 'https://hangryhippo.quantic.host/'
