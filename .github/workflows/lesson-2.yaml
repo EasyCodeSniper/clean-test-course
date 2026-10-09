@@ -12,6 +12,15 @@ jobs:
         working-directory: backend
     steps:
       - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.8"
+      - name: Install backend and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r hangry_api/requirements.txt pytest django-mock-queries
+      - name: Run backend unit tests
+        run: pytest hangry_api/tests
       - name: Disable Debug
         run: |
           sed -i 's/DEBUG = True/DEBUG = False/g' hangry_api/hangry_api/settings.py
